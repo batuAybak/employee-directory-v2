@@ -9,10 +9,9 @@ employeesRouter.get('/', (req, res) => {
 })
 
 employeesRouter.post('/', (req, res) => {
-    // If there is no body or body.name return 400
-    if (!req.body || !req.body.name) return res.sendStatus(400)
+    if (!req.body || !req.body.name) res.sendStatus(400) // If there is no body or body.name return 400
 
-    employees.push({ id: employees.length + 1, name: req.body.name })
+    employees.push({ id: employees.length + 1, name: req.body.name }) //Unique id per name
     res.status(201).send(employees[employees.length - 1])
 })
 

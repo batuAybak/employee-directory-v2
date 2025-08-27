@@ -4,7 +4,7 @@ const app = express();
 export default app;
 
 import employeesRoutes from './api/employeesRouter.js'
-app.use(express.json());
+app.use(express.json()); //This is first 
 
 app.route("/").get((req, res) => {
   res.send("Hello employees!");
